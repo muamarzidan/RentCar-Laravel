@@ -175,7 +175,6 @@ class MobilController extends Controller
                 'deskripsi' => $request->deskripsi,
                 'rented' => 1,
             ]);
-
             if($carup) {
                 return response()->json([
                     'succes' => true,

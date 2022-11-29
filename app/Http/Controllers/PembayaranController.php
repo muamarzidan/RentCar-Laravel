@@ -46,6 +46,7 @@ class PembayaranController extends Controller
                 'nama' => $request->nama,
                 'nama_kendaraan' => $request->nama_kendaraan,
                 'total_harga' => $request->total_harga,
+                'metode_pembayaran' => $request->metode_pembayaran,
                 'bukti_pembayaran' => $request->bukti_pembayaran,
             ]);
 

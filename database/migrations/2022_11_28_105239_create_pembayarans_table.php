@@ -21,6 +21,7 @@ class CreatePembayaransTable extends Migration
             $table->string('nama');
             $table->string('nama_kendaraan');
             $table->integer('total_harga');
+            $table->string('metode_pembayaran');
             $table->string('bukti_pembayaran');
 
             $table->timestamps();

@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryHighController;
 use App\Http\Controllers\CategorylowController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\MetodeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PerentalanContoroller;
@@ -44,15 +45,16 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
         Route::resource('mobil', MobilController::class);
         Route::resource('pesanan', PesananController::class);
         Route::resource('pembayaran', PesananbayarController::class);
+        Route::resource('metode', MetodeController::class);
     });
 
-    Route::post('rental', [OrderController::class, 'store']);
-    Route::post('bayar', [PembayaranController::class, 'store']);
-    Route::get('terjangkau', [CategorylowController::class, 'index']);
-    Route::get('mahal', [CategoryHighController::class, 'index']);
+    Route::post('/client/rental', [OrderController::class, 'store']);
+    Route::post('/client/bayar', [PembayaranController::class, 'store']);
+    Route::get('/client/mobil/terjangkau', [CategorylowController::class, 'index']);
+    Route::get('/client/mobil/mahal', [CategoryHighController::class, 'index']);
 
     Route::post('logout', [AuthController::class, 'logout']);
 });
 
-Route::get('mobils', [MobilUserController::class, 'index']);
-Route::get('mobils/{id}', [MobilUserController::class, 'show']);
+Route::get('/client/mobils', [MobilUserController::class, 'index']);
+Route::get('/client/mobils/{id}', [MobilUserController::class, 'show']);

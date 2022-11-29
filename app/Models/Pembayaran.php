@@ -13,6 +13,7 @@ class Pembayaran extends Model
         'nama',
         'nama_kendaraan',
         'total_harga',
+        'metode_pembayaran',
         'bukti_pembayaran'
     ];
 
@@ -25,9 +26,12 @@ class Pembayaran extends Model
     {
         return $this->belongsTo(User::class);
     }
-
     public function Perentalan()
     {
         return $this->belongsTo(Perentalan::class);
+    }
+    public function Metode()
+    {
+        return $this->belongsTo(Metode::class);
     }
 }
